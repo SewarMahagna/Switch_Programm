@@ -13,7 +13,7 @@ class dealer():
             self.display_board()
             
             card1, card2 = self.get_card()
-            self.isvalid_card(card1,card2)
+            self.validate_cards(card1,card2)
 
             self.flip_card(card1,card2)
 
@@ -26,11 +26,18 @@ class dealer():
         print(f"Congratulations! You completed the game in {turns} turns.")
 
     def get_card(self):
-        index1 = int(input("Enter the index of the first card: "))
-        index2 = int(input("Enter the index of the second card: "))
-        return index1,index2
+        while True:
+            try:
+                index1 = int(input("Enter the index of the first card: "))
+                index2 = int(input("Enter the index of the second card: "))
+                if index1 == index2:
+                    print("You cannot select the same card twice.")
+                    continue
+                return index1, index2
+            except ValueError:
+                print("Invalid input. Please enter numeric indices.")
     
-    def isvalid_card(self,card1,card2):
+    def validate_cards(self,card1,card2):
         if card1 >= self.board_size or card2 >= self.board_size :
             raise IndexError(f"Card index is out of range. Valid indices are 0 to {self.board_size - 1}.")
 
