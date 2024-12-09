@@ -52,5 +52,6 @@ def sum_even_by_dfs(number_graph, node, visited=None, total_sum=0):
         
     return total_sum
 
-
+print(sum_all_by_dfs(number_graph, 3))
+print(sum_odd_by_dfs(number_graph, 3))
 print(sum_even_by_dfs(number_graph, 3))

@@ -1,16 +1,19 @@
-#Permutations of a String
-#- Problem: Write a function to generate all possible permutations of a given string. 
-#- Example Input: permutations("abc") 
-#- Expected Output: ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']'
+def median(arr): 
+    sorted_arr = sorted(arr)
+    n = len(arr)
+    if n%2 ==0 :
+        return sorted_arr[n//2-1]
+    return sorted_arr[n//2]
 
 
-def string_permutations(input_string):
-    permutations_lst = []
-    for i , char in  enumerate(input_string) : 
-        str_without_i = input_string[:i] + input_string[i+1:]
-        for p in string_permutations(str_without_i):
-            permutations_lst.append(char + p)
-    return permutations_lst
-            
+res1 = median([3,10,4])
+res2 = median([-10,-20,50,1000])
+res3 = median([-1,1])
+res4 = median([-1,-1,2])
 
-print(string_permutations("abc"))
+print(res1)
+print(res2)
+print(res3)
+print(res4)
+
+
