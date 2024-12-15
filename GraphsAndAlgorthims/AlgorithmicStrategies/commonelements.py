@@ -8,10 +8,6 @@ def CommonElements(arr1,arr2):
 
     return common_arr 
 
-
-#print(CommonElements(arr1,arr2))
-
-#More Efficient Solution
 def count_common(arr): 
     count_dic = {}
     for element in arr:
