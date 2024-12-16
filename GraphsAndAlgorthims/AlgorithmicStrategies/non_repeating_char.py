@@ -1,13 +1,12 @@
 def get_char_frequencies(str): 
-    count_dic = {}
+    dic_of_frequencies = {}
     for char in str:
         char = char.lower() if char.isalpha() else char
-        if count_dic.get(char):
-            count_dic[char] += 1  
+        if dic_of_frequencies.get(char):
+            dic_of_frequencies[char] += 1  
         else:
-            count_dic[char] = 1  
-
-    return count_dic
+            dic_of_frequencies[char] = 1  
+    return dic_of_frequencies
 
 def get_first_non_repeating_char(given_str):
     common_chars_dic = get_char_frequencies(given_str)
