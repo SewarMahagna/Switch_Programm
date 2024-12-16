@@ -1,33 +1,35 @@
-def char_position(char):
+def get_char_score(char):
     if char.isalpha():
         return ord(char.lower()) - ord('a') + 1
     return 0
 
 
-def Word_Score(given_word): 
+def get_word_score(given_word): 
     if not given_word:
         return 0
     score = 0 
     for char in given_word : 
-        score +=char_position(char) 
+        score +=get_char_score(char) 
     return score
 
-def Str_Score(given_str): 
+def get_max_word_score(given_str): 
     words_lst = given_str.split()
-    highest_score = Word_Score(words_lst[0])
+    max_score = get_word_score(words_lst[0])
     max_word = words_lst[0]
+
     for word in words_lst :
-        new_score = Word_Score(word)
-        if new_score > highest_score : 
-            highest_score = new_score
+        new_score = get_word_score(word)
+        if new_score > max_score : 
+            max_score = new_score
             max_word = word
+
     print(max_word)
 
 
 
 str = "Happy Birthday"
 
-Str_Score(str)
+get_max_word_score(str)
 
 
     
