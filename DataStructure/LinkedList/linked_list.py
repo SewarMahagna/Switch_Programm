@@ -23,11 +23,4 @@ class LinkedList:
             print(current.data, end=" -> " if current.next else "\n")
             current = current.next
 
-my_list = LinkedList()
-values = [3, 5, 15,66,-6]
-for value in values:
-    my_list.append(value)
-
-my_list.display()
-
 
