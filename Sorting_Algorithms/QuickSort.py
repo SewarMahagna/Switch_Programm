@@ -3,7 +3,7 @@ def QuickSort(arr):
         return arr 
     
     pivot =arr[-1]
-    small=[x for x in arr[:-1] if x<= pivot]
+    small=[x for x in arr[:-1] if x <= pivot]
     big = [x for x in arr[:-1] if x>pivot]
     
     return QuickSort(small) + [pivot] + QuickSort(big)
