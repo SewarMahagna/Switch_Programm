@@ -1,12 +1,14 @@
 """
 Given a string s and a dictionary of strings wordDict
 return true if s can be segmented into a space-separated sequence of one or more dictionary words.
+
 """
+
 def is_word_break(givenStr, wordDict):
 
     min_word_len = min(len(word) for word in wordDict)  
     constructed_str = ""
-    if len(givenStr) < min_word_len:
+    if len(givenStr) < min_word_len: 
         return False
 
     index = 0
